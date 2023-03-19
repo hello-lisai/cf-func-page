@@ -1,8 +1,3 @@
-
-.PHONY:
-test:
-	python ./manage.py test
-
 ## Downloads Node.js
 ## @category Node.js
 getnode:
@@ -16,11 +11,13 @@ setnode:
 	@echo export PATH="$(PATH):$(shell pwd)/venvnode/bin:$(shell pwd)/node_modules/.bin"
 
 
-## Installs wrangler
+## Installs npm modules.
 ## @category Node.js
 npminstall:
 	npm install
 
+## Starts development server.
+## @category Cloudflare
 startdev:
 	cd ./cloudflare && \
 	npx wrangler pages dev frontend
